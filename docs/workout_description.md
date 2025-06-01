@@ -27,7 +27,7 @@
 
 ---
 
-## 📋 Training Tables
+## 📋 Training Sessions
 
 ### **Session A**
 
