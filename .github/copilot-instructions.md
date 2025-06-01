@@ -10,9 +10,11 @@
 - Use pounds (lbs) for weight measurements.
 - The ./docs/workout_description.md file contains the workout program details.  It is a sample, and to be used only for structure and reference.
 
+
 # Copilot Database Instructions
 - Use SQLAlchemy for database interactions.
 - The database is SQLite.  The file is located at '/workspaces/variable-load-workout/data/workout.db'.
+- The anyquery MCP server can help chat wih data.  It is read-only though.
 
 ## References
 - [GitHub Copilot Custom Instructions Documentation](https://docs.github.com/en/copilot/using-github-copilot/configuring-github-copilot/repository-custom-instructions-for-github-copilot)

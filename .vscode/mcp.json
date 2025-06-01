@@ -6,6 +6,7 @@
             "args": [
                 "mcp",
                 "--stdio",
+                "--readonly",
                 "--database",
                 "/workspaces/variable-load-workout/data/workout.db"
             ]
