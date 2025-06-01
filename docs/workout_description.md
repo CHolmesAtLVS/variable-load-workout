@@ -29,7 +29,7 @@
 
 ## 📋 Training Tables
 
-### **Table A**
+### **Session A**
 
 * **Main Lifts:**
   * A1: Deadlift (Hip Hinge)
@@ -44,7 +44,7 @@
 
 ---
 
-### **Table B**
+### **Session B**
 
 * **Main Lifts:**
   * A1: Pull-Up (Vertical Pull)
@@ -59,7 +59,7 @@
 
 ---
 
-### **Table C**
+### **Session C**
 
 * **Main Lifts:**
   * A1: Squat (Squat)
