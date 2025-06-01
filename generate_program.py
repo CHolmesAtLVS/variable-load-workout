@@ -8,22 +8,6 @@ import sqlite3
 from typing import Dict, List, Any
 from datetime import date
 
-# 12-session progression as per README
-SESSION_PROGRESSIONS = [
-    {"main": (5, 2, 0.70), "sv": (6, 3, "10RM")},
-    {"main": (2, 5, 0.85), "sv": (3, 5, "5RM")},
-    {"main": (5, 2, 0.75), "sv": (5, 4, "8RM")},
-    {"main": (3, 3, 0.80), "sv": (4, 5, "6RM")},
-    {"main": (5, 2, 0.70), "sv": (6, 3, "10RM")},
-    {"main": (1, 6, 0.90), "sv": (3, 5, "5RM")},
-    {"main": (2, 5, 0.75), "sv": (5, 4, "8RM")},
-    {"main": (2, 3, 0.85), "sv": (4, 5, "6RM")},
-    {"main": (5, 2, 0.70), "sv": (6, 3, "10RM")},
-    {"main": (2, 3, 0.85), "sv": (3, 5, "5RM")},
-    {"main": (2, 5, 0.75), "sv": (5, 4, "8RM")},
-    {"main": (3, 4, 0.80), "sv": (4, 5, "6RM")},
-]
-
 RM_TO_COL = {
     "1RM": "TRM-1RM (lbs)",
     "2RM": "TRM-2RM (lbs)",
@@ -69,6 +53,18 @@ def get_trm(row: Dict[str, Any], percent: float = None, rm: str = None) -> float
     return 0.0
 
 
+def get_trm_with_rm(row: Dict[str, Any], percent: float = None, rm: str = None) -> str:
+    """
+    Get TRM for a given row, either by percent of 1RM or by RM column, and return as a string with RM in brackets.
+    """
+    weight = get_trm(row, percent=percent, rm=rm)
+    if rm is not None:
+        return f"{weight} lbs [{rm}]"
+    elif percent is not None:
+        return f"{weight} lbs [1RM x {percent:.0%}]"
+    return f"{weight} lbs"
+
+
 def load_session_plan(db_path: str) -> Dict[str, Dict[str, List[str]]]:
     """
     Load the session plan from the SessionsPlan table in the SQLite database.
@@ -89,29 +85,65 @@ def load_session_plan(db_path: str) -> Dict[str, Dict[str, List[str]]]:
     return plan
 
 
-def generate_program(trm_data: Dict[str, Dict[str, Any]], session_plan: Dict[str, Dict[str, List[str]]]) -> List[Dict[str, Any]]:
+def load_session_progression(db_path: str) -> List[Dict[str, Any]]:
     """
-    Generate the 12-session program as a list of dicts using the session plan from the database.
+    Load session progression (reps, sets, TRM) from SVRepSetScheme table.
+    Returns a list of dicts, one per session.
+    """
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    cur.execute("SELECT Reps, Sets, Number_TRM, TRM FROM SVRepSetScheme ORDER BY Session_Number ASC")
+    progression = [
+        {"reps": row[0], "sets": row[1], "number_trm": row[2], "trm": row[3]} for row in cur.fetchall()
+    ]
+    conn.close()
+    return progression
+
+
+def load_main_session_progression(db_path: str) -> List[Dict[str, Any]]:
+    """
+    Load main lift session progression (reps, sets, TRM) from MainLiftsRepSetScheme table.
+    Returns a list of dicts, one per session.
+    """
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    cur.execute("SELECT Reps, Sets, Number_TRM, TRM FROM MainLiftsRepSetScheme ORDER BY Session_Number ASC")
+    progression = [
+        {"reps": row[0], "sets": row[1], "number_trm": row[2], "trm": row[3]} for row in cur.fetchall()
+    ]
+    conn.close()
+    return progression
+
+
+def normalize_rm(trm: str) -> str:
+    """
+    Convert '10TRM' to '10RM', etc., for column lookup.
+    """
+    if trm.endswith('TRM'):
+        return trm.replace('TRM', 'RM')
+    return trm
+
+
+def generate_program(trm_data: Dict[str, Dict[str, Any]], session_plan: Dict[str, Dict[str, List[str]]], main_progression: List[Dict[str, Any]], sv_progression: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    Generate the program as a list of dicts using the session plan and both main/SV progression from the database.
     """
     program: List[Dict[str, Any]] = []
-    table_order = list(session_plan.keys()) * (12 // len(session_plan) + 1)
-    for session_idx, session in enumerate(SESSION_PROGRESSIONS):
-        table = table_order[session_idx % len(session_plan)]
+    session_names = list(session_plan.keys())
+    for idx in range(min(len(main_progression), len(sv_progression))):
+        table = session_names[idx % len(session_names)]
         lifts = session_plan[table]
-        entry = {"Session": session_idx + 1, "Table": table, "Main": [], "SV": []}
+        main_rm = normalize_rm(main_progression[idx]["trm"])
+        sv_rm = normalize_rm(sv_progression[idx]["trm"])
+        entry = {"Session": idx + 1, "Table": table, "Main": [], "SV": []}
         # Main lifts
-        reps, sets, percent = session["main"]
         for ex in lifts["Main"]:
-            if isinstance(percent, float):
-                weight = get_trm(trm_data.get(ex, {}), percent=percent)
-            else:
-                weight = 0.0
-            entry["Main"].append({"Exercise": ex, "Sets": sets, "Reps": reps, "Weight (lbs)": weight})
+            weight_str = get_trm_with_rm(trm_data.get(ex, {}), rm=main_rm)
+            entry["Main"].append({"Exercise": ex, "Sets": main_progression[idx]["sets"], "Reps": main_progression[idx]["reps"], "Weight": weight_str})
         # SV lifts
-        sv_reps, sv_sets, sv_rm = session["sv"]
         for ex in lifts["SV"]:
-            weight = get_trm(trm_data.get(ex, {}), rm=sv_rm)
-            entry["SV"].append({"Exercise": ex, "Sets": sv_sets, "Reps": sv_reps, "Weight (lbs)": weight})
+            weight_str = get_trm_with_rm(trm_data.get(ex, {}), rm=sv_rm)
+            entry["SV"].append({"Exercise": ex, "Sets": sv_progression[idx]["sets"], "Reps": sv_progression[idx]["reps"], "Weight": weight_str})
         program.append(entry)
     return program
 
@@ -124,20 +156,22 @@ def print_program(program: List[Dict[str, Any]]) -> None:
         print(f"Session {session['Session']} (Table {session['Table']}):")
         print("  Main Lifts:")
         for lift in session["Main"]:
-            print(f"    - {lift['Exercise']}: {lift['Sets']}x{lift['Reps']} @ {lift['Weight (lbs)']} lbs")
+            print(f"    - {lift['Exercise']}: {lift['Sets']}x{lift['Reps']} @ {lift['Weight']}")
         print("  Specialized Variety (SV) Lifts:")
         for lift in session["SV"]:
-            print(f"    - {lift['Exercise']}: {lift['Sets']}x{lift['Reps']} @ {lift['Weight (lbs)']} lbs")
+            print(f"    - {lift['Exercise']}: {lift['Sets']}x{lift['Reps']} @ {lift['Weight']}")
         print()
 
 
 def main() -> None:
     """
-    Main entry point. Loads TRM data and session plan from the database, then prints the program.
+    Main entry point. Loads TRM data, session plan, and both main/SV session progression from the database, then prints the program.
     """
     trm_data = load_trm("data/trm.csv")
     session_plan = load_session_plan("data/workout.db")
-    program = generate_program(trm_data, session_plan)
+    main_progression = load_main_session_progression("data/workout.db")
+    sv_progression = load_session_progression("data/workout.db")
+    program = generate_program(trm_data, session_plan, main_progression, sv_progression)
     print_program(program)
 
 
