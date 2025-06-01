@@ -9,16 +9,16 @@ from typing import Dict, List, Any
 from datetime import date
 
 RM_TO_COL = {
-    "1RM": "TRM-1RM (lbs)",
-    "2RM": "TRM-2RM (lbs)",
-    "3RM": "TRM-3RM (lbs)",
-    "4RM": "TRM-4RM (lbs)",
-    "5RM": "TRM-5RM (lbs)",
-    "6RM": "TRM-6RM (lbs)",
-    "7RM": "TRM-7RM (lbs)",
-    "8RM": "TRM-8RM (lbs)",
-    "9RM": "TRM-9RM (lbs)",
-    "10RM": "TRM-10RM (lbs)",
+    "1RM": "TRM_1RM",
+    "2RM": "TRM_2RM",
+    "3RM": "TRM_3RM",
+    "4RM": "TRM_4RM",
+    "5RM": "TRM_5RM",
+    "6RM": "TRM_6RM",
+    "7RM": "TRM_7RM",
+    "8RM": "TRM_8RM",
+    "9RM": "TRM_9RM",
+    "10RM": "TRM_10RM",
 }
 
 
@@ -32,6 +32,23 @@ def load_trm(filepath: str) -> Dict[str, Dict[str, Any]]:
         for row in reader:
             name = row["Exercise"].strip().strip('"')
             trm_data[name] = row
+    return trm_data
+
+
+def load_trm_from_db(db_path: str) -> Dict[str, Dict[str, Any]]:
+    """
+    Load TRM data from the trm table in the SQLite database. Returns a dict mapping exercise name to TRM values.
+    """
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM trm")
+    columns = [desc[0] for desc in cur.description]
+    trm_data: Dict[str, Dict[str, Any]] = {}
+    for row in cur.fetchall():
+        row_dict = dict(zip(columns, row))
+        name = row_dict["Exercise"].strip().strip('"')
+        trm_data[name] = row_dict
+    conn.close()
     return trm_data
 
 
@@ -167,7 +184,7 @@ def main() -> None:
     """
     Main entry point. Loads TRM data, session plan, and both main/SV session progression from the database, then prints the program.
     """
-    trm_data = load_trm("data/trm.csv")
+    trm_data = load_trm_from_db("data/workout.db")
     session_plan = load_session_plan("data/workout.db")
     main_progression = load_main_session_progression("data/workout.db")
     sv_progression = load_session_progression("data/workout.db")
