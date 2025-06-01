@@ -1,0 +1,288 @@
+Session 1, (Plan A):
+  Main Lifts:
+    - Romanian Deadlift: 2x5 @ 185.0 lbs [10RM]
+    - One-arm Kettlebell Military Press: 2x5 @ 55.0 lbs [10RM]
+    - Bulgarian Split Squat: 2x5 @ 30.0 lbs [10RM]
+    - Bench Press: 2x5 @ 150.0 lbs [10RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Deadlift: 3x6 @ 220.0 lbs [10RM]
+    - Barbell Military Press: 3x6 @ 95.0 lbs [10RM]
+    - Box Jumps: 3x6 @ 135.0 lbs [10RM]
+    - Incline Dumbbell Press: 3x6 @ 65.0 lbs [10RM]
+
+Session 2, (Plan B):
+  Main Lifts:
+    - One-Arm Pulldowns: 5x2 @ 60.0 lbs [6RM]
+    - One Arm Row: 5x2 @ 65.0 lbs [6RM]
+    - Romanian Deadlift: 5x2 @ 210.0 lbs [6RM]
+    - One-arm Kettlebell Military Press: 5x2 @ 60.0 lbs [6RM]
+  Specialized Variety (SV) Lifts:
+    - Chin-Ups: 5x3 @ 170.0 lbs [5RM]
+    - Barbell Dead Row: 5x3 @ 130.0 lbs [5RM]
+    - Nordics: 5x3 @ 205.0 lbs [5RM]
+    - Cambered Bar Skull Crushers: 5x3 @ 85.0 lbs [5RM]
+
+Session 3, (Plan C):
+  Main Lifts:
+    - Bulgarian Split Squat: 2x5 @ 30.0 lbs [9RM]
+    - Bench Press: 2x5 @ 155.0 lbs [9RM]
+    - One-Arm Pulldowns: 2x5 @ 60.0 lbs [9RM]
+    - One Arm Row: 2x5 @ 60.0 lbs [9RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Front Squat: 4x5 @ 125.0 lbs [8RM]
+    - Parallel Bars Dip: 4x5 @ 180.0 lbs [8RM]
+    - Chin-Ups: 4x5 @ 155.0 lbs [8RM]
+    - Renegade Row: 4x5 @ 35.0 lbs [8RM]
+
+Session 4, (Plan A):
+  Main Lifts:
+    - Romanian Deadlift: 3x3 @ 200.0 lbs [8RM]
+    - One-arm Kettlebell Military Press: 3x3 @ 60.0 lbs [8RM]
+    - Bulgarian Split Squat: 3x3 @ 30.0 lbs [8RM]
+    - Bench Press: 3x3 @ 160.0 lbs [8RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Deadlift: 5x4 @ 245.0 lbs [6RM]
+    - Barbell Military Press: 5x4 @ 110.0 lbs [6RM]
+    - Box Jumps: 5x4 @ 150.0 lbs [6RM]
+    - Incline Dumbbell Press: 5x4 @ 75.0 lbs [6RM]
+
+Session 5, (Plan B):
+  Main Lifts:
+    - One-Arm Pulldowns: 2x5 @ 55.0 lbs [10RM]
+    - One Arm Row: 2x5 @ 60.0 lbs [10RM]
+    - Romanian Deadlift: 2x5 @ 185.0 lbs [10RM]
+    - One-arm Kettlebell Military Press: 2x5 @ 55.0 lbs [10RM]
+  Specialized Variety (SV) Lifts:
+    - Chin-Ups: 3x6 @ 145.0 lbs [10RM]
+    - Barbell Dead Row: 3x6 @ 115.0 lbs [10RM]
+    - Nordics: 3x6 @ 205.0 lbs [10RM]
+    - Cambered Bar Skull Crushers: 3x6 @ 70.0 lbs [10RM]
+
+Session 6, (Plan C):
+  Main Lifts:
+    - Bulgarian Split Squat: 6x1 @ 30.0 lbs [3RM]
+    - Bench Press: 6x1 @ 185.0 lbs [3RM]
+    - One-Arm Pulldowns: 6x1 @ 65.0 lbs [3RM]
+    - One Arm Row: 6x1 @ 70.0 lbs [3RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Front Squat: 5x3 @ 140.0 lbs [5RM]
+    - Parallel Bars Dip: 5x3 @ 200.0 lbs [5RM]
+    - Chin-Ups: 5x3 @ 170.0 lbs [5RM]
+    - Renegade Row: 5x3 @ 35.0 lbs [5RM]
+
+Session 7, (Plan A):
+  Main Lifts:
+    - Romanian Deadlift: 2x5 @ 190.0 lbs [9RM]
+    - One-arm Kettlebell Military Press: 2x5 @ 55.0 lbs [9RM]
+    - Bulgarian Split Squat: 2x5 @ 30.0 lbs [9RM]
+    - Bench Press: 2x5 @ 155.0 lbs [9RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Deadlift: 4x5 @ 230.0 lbs [8RM]
+    - Barbell Military Press: 4x5 @ 105.0 lbs [8RM]
+    - Box Jumps: 4x5 @ 145.0 lbs [8RM]
+    - Incline Dumbbell Press: 4x5 @ 70.0 lbs [8RM]
+
+Session 8, (Plan B):
+  Main Lifts:
+    - One-Arm Pulldowns: 4x3 @ 60.0 lbs [6RM]
+    - One Arm Row: 4x3 @ 65.0 lbs [6RM]
+    - Romanian Deadlift: 4x3 @ 210.0 lbs [6RM]
+    - One-arm Kettlebell Military Press: 4x3 @ 60.0 lbs [6RM]
+  Specialized Variety (SV) Lifts:
+    - Chin-Ups: 5x3 @ 170.0 lbs [5RM]
+    - Barbell Dead Row: 5x3 @ 130.0 lbs [5RM]
+    - Nordics: 5x3 @ 205.0 lbs [5RM]
+    - Cambered Bar Skull Crushers: 5x3 @ 85.0 lbs [5RM]
+
+Session 9, (Plan C):
+  Main Lifts:
+    - Bulgarian Split Squat: 2x5 @ 30.0 lbs [10RM]
+    - Bench Press: 2x5 @ 150.0 lbs [10RM]
+    - One-Arm Pulldowns: 2x5 @ 55.0 lbs [10RM]
+    - One Arm Row: 2x5 @ 60.0 lbs [10RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Front Squat: 3x6 @ 115.0 lbs [10RM]
+    - Parallel Bars Dip: 3x6 @ 170.0 lbs [10RM]
+    - Chin-Ups: 3x6 @ 145.0 lbs [10RM]
+    - Renegade Row: 3x6 @ 30.0 lbs [10RM]
+
+Session 10, (Plan A):
+  Main Lifts:
+    - Romanian Deadlift: 4x3 @ 220.0 lbs [4RM]
+    - One-arm Kettlebell Military Press: 4x3 @ 65.0 lbs [4RM]
+    - Bulgarian Split Squat: 4x3 @ 30.0 lbs [4RM]
+    - Bench Press: 4x3 @ 180.0 lbs [4RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Deadlift: 5x3 @ 255.0 lbs [5RM]
+    - Barbell Military Press: 5x3 @ 115.0 lbs [5RM]
+    - Box Jumps: 5x3 @ 155.0 lbs [5RM]
+    - Incline Dumbbell Press: 5x3 @ 75.0 lbs [5RM]
+
+Session 11, (Plan B):
+  Main Lifts:
+    - One-Arm Pulldowns: 2x5 @ 60.0 lbs [9RM]
+    - One Arm Row: 2x5 @ 60.0 lbs [9RM]
+    - Romanian Deadlift: 2x5 @ 190.0 lbs [9RM]
+    - One-arm Kettlebell Military Press: 2x5 @ 55.0 lbs [9RM]
+  Specialized Variety (SV) Lifts:
+    - Chin-Ups: 4x5 @ 155.0 lbs [8RM]
+    - Barbell Dead Row: 4x5 @ 120.0 lbs [8RM]
+    - Nordics: 4x5 @ 205.0 lbs [8RM]
+    - Cambered Bar Skull Crushers: 4x5 @ 75.0 lbs [8RM]
+
+Session 12, (Plan C):
+  Main Lifts:
+    - Bulgarian Split Squat: 3x4 @ 30.0 lbs [7RM]
+    - Bench Press: 3x4 @ 170.0 lbs [7RM]
+    - One-Arm Pulldowns: 3x4 @ 60.0 lbs [7RM]
+    - One Arm Row: 3x4 @ 65.0 lbs [7RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Front Squat: 5x4 @ 135.0 lbs [6RM]
+    - Parallel Bars Dip: 5x4 @ 195.0 lbs [6RM]
+    - Chin-Ups: 5x4 @ 165.0 lbs [6RM]
+    - Renegade Row: 5x4 @ 35.0 lbs [6RM]
+
+Session 13, (Plan A):
+  Main Lifts:
+    - Romanian Deadlift: 2x5 @ 185.0 lbs [10RM]
+    - One-arm Kettlebell Military Press: 2x5 @ 55.0 lbs [10RM]
+    - Bulgarian Split Squat: 2x5 @ 30.0 lbs [10RM]
+    - Bench Press: 2x5 @ 150.0 lbs [10RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Deadlift: 3x6 @ 220.0 lbs [10RM]
+    - Barbell Military Press: 3x6 @ 95.0 lbs [10RM]
+    - Box Jumps: 3x6 @ 135.0 lbs [10RM]
+    - Incline Dumbbell Press: 3x6 @ 65.0 lbs [10RM]
+
+Session 14, (Plan B):
+  Main Lifts:
+    - One-Arm Pulldowns: 5x2 @ 60.0 lbs [6RM]
+    - One Arm Row: 5x2 @ 65.0 lbs [6RM]
+    - Romanian Deadlift: 5x2 @ 210.0 lbs [6RM]
+    - One-arm Kettlebell Military Press: 5x2 @ 60.0 lbs [6RM]
+  Specialized Variety (SV) Lifts:
+    - Chin-Ups: 5x3 @ 170.0 lbs [5RM]
+    - Barbell Dead Row: 5x3 @ 130.0 lbs [5RM]
+    - Nordics: 5x3 @ 205.0 lbs [5RM]
+    - Cambered Bar Skull Crushers: 5x3 @ 85.0 lbs [5RM]
+
+Session 15, (Plan C):
+  Main Lifts:
+    - Bulgarian Split Squat: 2x5 @ 30.0 lbs [9RM]
+    - Bench Press: 2x5 @ 155.0 lbs [9RM]
+    - One-Arm Pulldowns: 2x5 @ 60.0 lbs [9RM]
+    - One Arm Row: 2x5 @ 60.0 lbs [9RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Front Squat: 4x5 @ 125.0 lbs [8RM]
+    - Parallel Bars Dip: 4x5 @ 180.0 lbs [8RM]
+    - Chin-Ups: 4x5 @ 155.0 lbs [8RM]
+    - Renegade Row: 4x5 @ 35.0 lbs [8RM]
+
+Session 16, (Plan A):
+  Main Lifts:
+    - Romanian Deadlift: 3x3 @ 200.0 lbs [8RM]
+    - One-arm Kettlebell Military Press: 3x3 @ 60.0 lbs [8RM]
+    - Bulgarian Split Squat: 3x3 @ 30.0 lbs [8RM]
+    - Bench Press: 3x3 @ 160.0 lbs [8RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Deadlift: 5x4 @ 245.0 lbs [6RM]
+    - Barbell Military Press: 5x4 @ 110.0 lbs [6RM]
+    - Box Jumps: 5x4 @ 150.0 lbs [6RM]
+    - Incline Dumbbell Press: 5x4 @ 75.0 lbs [6RM]
+
+Session 17, (Plan B):
+  Main Lifts:
+    - One-Arm Pulldowns: 2x5 @ 55.0 lbs [10RM]
+    - One Arm Row: 2x5 @ 60.0 lbs [10RM]
+    - Romanian Deadlift: 2x5 @ 185.0 lbs [10RM]
+    - One-arm Kettlebell Military Press: 2x5 @ 55.0 lbs [10RM]
+  Specialized Variety (SV) Lifts:
+    - Chin-Ups: 3x6 @ 145.0 lbs [10RM]
+    - Barbell Dead Row: 3x6 @ 115.0 lbs [10RM]
+    - Nordics: 3x6 @ 205.0 lbs [10RM]
+    - Cambered Bar Skull Crushers: 3x6 @ 70.0 lbs [10RM]
+
+Session 18, (Plan C):
+  Main Lifts:
+    - Bulgarian Split Squat: 6x1 @ 30.0 lbs [3RM]
+    - Bench Press: 6x1 @ 185.0 lbs [3RM]
+    - One-Arm Pulldowns: 6x1 @ 65.0 lbs [3RM]
+    - One Arm Row: 6x1 @ 70.0 lbs [3RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Front Squat: 5x3 @ 140.0 lbs [5RM]
+    - Parallel Bars Dip: 5x3 @ 200.0 lbs [5RM]
+    - Chin-Ups: 5x3 @ 170.0 lbs [5RM]
+    - Renegade Row: 5x3 @ 35.0 lbs [5RM]
+
+Session 19, (Plan A):
+  Main Lifts:
+    - Romanian Deadlift: 4x3 @ 200.0 lbs [8RM]
+    - One-arm Kettlebell Military Press: 4x3 @ 60.0 lbs [8RM]
+    - Bulgarian Split Squat: 4x3 @ 30.0 lbs [8RM]
+    - Bench Press: 4x3 @ 160.0 lbs [8RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Deadlift: 5x4 @ 245.0 lbs [6RM]
+    - Barbell Military Press: 5x4 @ 110.0 lbs [6RM]
+    - Box Jumps: 5x4 @ 150.0 lbs [6RM]
+    - Incline Dumbbell Press: 5x4 @ 75.0 lbs [6RM]
+
+Session 20, (Plan B):
+  Main Lifts:
+    - One-Arm Pulldowns: 2x5 @ 55.0 lbs [10RM]
+    - One Arm Row: 2x5 @ 60.0 lbs [10RM]
+    - Romanian Deadlift: 2x5 @ 185.0 lbs [10RM]
+    - One-arm Kettlebell Military Press: 2x5 @ 55.0 lbs [10RM]
+  Specialized Variety (SV) Lifts:
+    - Chin-Ups: 3x6 @ 145.0 lbs [10RM]
+    - Barbell Dead Row: 3x6 @ 115.0 lbs [10RM]
+    - Nordics: 3x6 @ 205.0 lbs [10RM]
+    - Cambered Bar Skull Crushers: 3x6 @ 70.0 lbs [10RM]
+
+Session 21, (Plan C):
+  Main Lifts:
+    - Bulgarian Split Squat: 5x2 @ 30.0 lbs [6RM]
+    - Bench Press: 5x2 @ 170.0 lbs [6RM]
+    - One-Arm Pulldowns: 5x2 @ 60.0 lbs [6RM]
+    - One Arm Row: 5x2 @ 65.0 lbs [6RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Front Squat: 5x3 @ 140.0 lbs [5RM]
+    - Parallel Bars Dip: 5x3 @ 200.0 lbs [5RM]
+    - Chin-Ups: 5x3 @ 170.0 lbs [5RM]
+    - Renegade Row: 5x3 @ 35.0 lbs [5RM]
+
+Session 22, (Plan A):
+  Main Lifts:
+    - Romanian Deadlift: 2x5 @ 190.0 lbs [9RM]
+    - One-arm Kettlebell Military Press: 2x5 @ 55.0 lbs [9RM]
+    - Bulgarian Split Squat: 2x5 @ 30.0 lbs [9RM]
+    - Bench Press: 2x5 @ 155.0 lbs [9RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Deadlift: 4x5 @ 230.0 lbs [8RM]
+    - Barbell Military Press: 4x5 @ 105.0 lbs [8RM]
+    - Box Jumps: 4x5 @ 145.0 lbs [8RM]
+    - Incline Dumbbell Press: 4x5 @ 70.0 lbs [8RM]
+
+Session 23, (Plan B):
+  Main Lifts:
+    - One-Arm Pulldowns: 3x3 @ 60.0 lbs [8RM]
+    - One Arm Row: 3x3 @ 60.0 lbs [8RM]
+    - Romanian Deadlift: 3x3 @ 200.0 lbs [8RM]
+    - One-arm Kettlebell Military Press: 3x3 @ 60.0 lbs [8RM]
+  Specialized Variety (SV) Lifts:
+    - Chin-Ups: 5x4 @ 165.0 lbs [6RM]
+    - Barbell Dead Row: 5x4 @ 125.0 lbs [6RM]
+    - Nordics: 5x4 @ 205.0 lbs [6RM]
+    - Cambered Bar Skull Crushers: 5x4 @ 80.0 lbs [6RM]
+
+Session 24, (Plan C):
+  Main Lifts:
+    - Bulgarian Split Squat: SetsxReps @ 0.0 lbs [RM]
+    - Bench Press: SetsxReps @ 0.0 lbs [RM]
+    - One-Arm Pulldowns: SetsxReps @ 0.0 lbs [RM]
+    - One Arm Row: SetsxReps @ 0.0 lbs [RM]
+  Specialized Variety (SV) Lifts:
+    - Barbell Front Squat: SetsxReps @ 0.0 lbs [RM]
+    - Parallel Bars Dip: SetsxReps @ 0.0 lbs [RM]
+    - Chin-Ups: SetsxReps @ 0.0 lbs [RM]
+    - Renegade Row: SetsxReps @ 0.0 lbs [RM]
+
