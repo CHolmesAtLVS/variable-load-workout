@@ -170,7 +170,9 @@ def print_program(program: List[Dict[str, Any]]) -> None:
     Print the generated program in a readable format.
     """
     for session in program:
-        print(f"Session {session['Session']} (Table {session['Table']}):")
+        # Map SessionA -> Plan A, SessionB -> Plan B, etc.
+        plan_letter = session['Table'].replace('Session', 'Plan ')
+        print(f"Session {session['Session']}, ({plan_letter}):")
         print("  Main Lifts:")
         for lift in session["Main"]:
             print(f"    - {lift['Exercise']}: {lift['Sets']}x{lift['Reps']} @ {lift['Weight']}")
