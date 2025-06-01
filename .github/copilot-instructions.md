@@ -4,6 +4,7 @@
 - Follow PEP8 style guidelines.
 - Use descriptive variable and function names.
 - Write docstrings for all public functions and classes.
+- After making a change, run the script to ensure it works as expected.  If there are errors, fix them.
 
 # Copilot Weight Lifting Instructions
 - Use pounds (lbs) for weight measurements.

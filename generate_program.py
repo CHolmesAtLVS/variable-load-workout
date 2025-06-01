@@ -4,54 +4,9 @@ Reads TRM values from data/trm.csv and outputs a 12-session program.
 All weights are in pounds (lbs).
 """
 import csv
+import sqlite3
 from typing import Dict, List, Any
 from datetime import date
-
-# Define the training tables as per README
-TRAINING_TABLES = {
-    "A": {
-        "Main Lifts": [
-            ("Deadlift", "Hip Hinge"),
-            ("Barbell Military Press", "Vertical Press"),
-            ("Barbell Back Squat", "Squat"),
-            ("Bench Press", "Horizontal Press"),
-        ],
-        "SV Lifts": [
-            ("Romanian Deadlift", "Hip Hinge"),
-            ("Overhead Dumbbell Press", "Vertical Press"),
-            ("Barbell Front Squat", "Squat"),
-            ("Incline Dumbbell Press", "Horizontal Press"),
-        ],
-    },
-    "B": {
-        "Main Lifts": [
-            ("Chin-Ups", "Vertical Pull"),
-            ("Barbell Dead Row", "Horizontal Pull"),
-            ("Deadlift", "Hip Hinge"),
-            ("Barbell Military Press", "Vertical Press"),
-        ],
-        "SV Lifts": [
-            ("Close Grip Pull-downs", "Vertical Pull"),
-            ("One Arm Row", "Horizontal Pull"),
-            ("Romanian Deadlift", "Hip Hinge"),
-            ("Overhead Dumbbell Press", "Vertical Press"),
-        ],
-    },
-    "C": {
-        "Main Lifts": [
-            ("Barbell Back Squat", "Squat"),
-            ("Bench Press", "Horizontal Press"),
-            ("Chin-Ups", "Vertical Pull"),
-            ("Barbell Dead Row", "Horizontal Pull"),
-        ],
-        "SV Lifts": [
-            ("Barbell Front Squat", "Squat"),
-            ("Incline Dumbbell Press", "Horizontal Press"),
-            ("Close Grip Pull-downs", "Vertical Pull"),
-            ("One Arm Row", "Horizontal Pull"),
-        ],
-    },
-}
 
 # 12-session progression as per README
 SESSION_PROGRESSIONS = [
@@ -114,19 +69,39 @@ def get_trm(row: Dict[str, Any], percent: float = None, rm: str = None) -> float
     return 0.0
 
 
-def generate_program(trm_data: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]]:
+def load_session_plan(db_path: str) -> Dict[str, Dict[str, List[str]]]:
     """
-    Generate the 12-session program as a list of dicts.
+    Load the session plan from the SessionsPlan table in the SQLite database.
+    Returns a dict: {SessionName: {"Main": [ex1, ex2, ...], "SV": [ex3, ...]}}
+    """
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    cur.execute("SELECT SessionName, ExerciseCode, Exercise FROM SessionsPlan")
+    plan: Dict[str, Dict[str, List[str]]] = {}
+    for session, code, exercise in cur.fetchall():
+        if session not in plan:
+            plan[session] = {"Main": [], "SV": []}
+        if code.startswith("Main-"):
+            plan[session]["Main"].append(exercise)
+        elif code.startswith("SV-"):
+            plan[session]["SV"].append(exercise)
+    conn.close()
+    return plan
+
+
+def generate_program(trm_data: Dict[str, Dict[str, Any]], session_plan: Dict[str, Dict[str, List[str]]]) -> List[Dict[str, Any]]:
+    """
+    Generate the 12-session program as a list of dicts using the session plan from the database.
     """
     program: List[Dict[str, Any]] = []
-    table_order = ["A", "B", "C", "B", "C", "A", "C", "A", "B", "A", "B", "C"]  # Example rotation
+    table_order = list(session_plan.keys()) * (12 // len(session_plan) + 1)
     for session_idx, session in enumerate(SESSION_PROGRESSIONS):
-        table = table_order[session_idx % len(table_order)]
-        lifts = TRAINING_TABLES[table]
+        table = table_order[session_idx % len(session_plan)]
+        lifts = session_plan[table]
         entry = {"Session": session_idx + 1, "Table": table, "Main": [], "SV": []}
         # Main lifts
         reps, sets, percent = session["main"]
-        for ex, _ in lifts["Main Lifts"]:
+        for ex in lifts["Main"]:
             if isinstance(percent, float):
                 weight = get_trm(trm_data.get(ex, {}), percent=percent)
             else:
@@ -134,7 +109,7 @@ def generate_program(trm_data: Dict[str, Dict[str, Any]]) -> List[Dict[str, Any]
             entry["Main"].append({"Exercise": ex, "Sets": sets, "Reps": reps, "Weight (lbs)": weight})
         # SV lifts
         sv_reps, sv_sets, sv_rm = session["sv"]
-        for ex, _ in lifts["SV Lifts"]:
+        for ex in lifts["SV"]:
             weight = get_trm(trm_data.get(ex, {}), rm=sv_rm)
             entry["SV"].append({"Exercise": ex, "Sets": sv_sets, "Reps": sv_reps, "Weight (lbs)": weight})
         program.append(entry)
@@ -158,10 +133,11 @@ def print_program(program: List[Dict[str, Any]]) -> None:
 
 def main() -> None:
     """
-    Main entry point. Loads TRM data and prints the program.
+    Main entry point. Loads TRM data and session plan from the database, then prints the program.
     """
     trm_data = load_trm("data/trm.csv")
-    program = generate_program(trm_data)
+    session_plan = load_session_plan("data/workout.db")
+    program = generate_program(trm_data, session_plan)
     print_program(program)
 
 
