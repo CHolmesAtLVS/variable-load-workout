@@ -1,0 +1,14 @@
+{
+    "servers": {
+        "anyquery": {
+            "type": "stdio",
+            "command": "anyquery",
+            "args": [
+                "mcp",
+                "--stdio",
+                "--database",
+                "/workspaces/variable-load-workout/data/workout.db"
+            ]
+        }
+    }
+}
